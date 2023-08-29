@@ -1,0 +1,8 @@
+django
+django-rest-framework
+black
+mypy
+isort
+django-cpf-cnpj
+django-phonenumber-field[phonenumbers]
+django-environ
