@@ -1,7 +1,9 @@
 from django.urls import path
-from .views import UserListCreateView, UserRetrieveUpdateDestroyView
+from rest_framework.routers import SimpleRouter
 
-urlpatterns = [
-    path('', UserListCreateView.as_view(), name='user_list_create'),
-    path('<int:pk>/', UserRetrieveUpdateDestroyView.as_view(), name='user_detail_update_delete'),
-]
+from .views import CustomUserViewSet
+
+router = SimpleRouter()
+router.register("", CustomUserViewSet, basename="user")
+
+urlpatterns = router.urls
