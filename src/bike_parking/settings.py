@@ -12,10 +12,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 environ.Env.read_env(BASE_DIR.parent / ".env")
 
 # SECURITY CRITICAL
-SECRET_KEY = "secret"
+SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY CRITICAL: DEBUG must always be False in any production environment.
-DEBUG = True
+DEBUG = env("DEBUG")
 
 # SECURITY CRITICAL: ALLOWED_HOSTS must be populated with the domain name of the production environment.
 ALLOWED_HOSTS = ['localhost']
