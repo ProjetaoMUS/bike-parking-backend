@@ -104,6 +104,8 @@ class CustomUser(AbstractUser):
     class Meta:
         verbose_name = _("user")
 
+    objects = CustomUserManager()
+
     tax_id = CPFField("tax_id", unique=True, null=True, blank=True)
     phone_number = PhoneNumberField(
         "phone_number", unique=True, null=False, blank=False
