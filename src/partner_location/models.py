@@ -4,10 +4,10 @@ from django.db import models
 from django.db import models
 
 
-class Local(models.Model):
+class PartnerLocation(models.Model):
     name = models.CharField(max_length=255)
     parking_spaces_count = models.PositiveIntegerField()
-    images = models.ImageField(upload_to='local/imagens/', blank=True, null=True)
+    images = models.ImageField(upload_to='partner_location/imagens/', blank=True, null=True)
     address = models.CharField(max_length=255)
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
