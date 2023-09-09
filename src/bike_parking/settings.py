@@ -1,6 +1,6 @@
 # NOTE: This file must not be used for anything resembling a production environment.
 # Please consult with @gqmv or @slbp before making any critical changes or deploying.
-
+import os
 from pathlib import Path
 
 import environ
@@ -18,7 +18,7 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = env("DEBUG")
 
 # SECURITY CRITICAL: ALLOWED_HOSTS must be populated with the domain name of the production environment.
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost','127.0.0.1']
 
 
 AUTH_USER_MODEL = "user.CustomUser"
@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "user",
+    "local"
 ]
 
 MIDDLEWARE = [
@@ -117,3 +118,4 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
