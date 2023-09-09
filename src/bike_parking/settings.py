@@ -18,7 +18,8 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = env("DEBUG")
 
 # SECURITY CRITICAL: ALLOWED_HOSTS must be populated with the domain name of the production environment.
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
+
 
 AUTH_USER_MODEL = "user.CustomUser"
 
