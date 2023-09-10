@@ -17,7 +17,9 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = env("DEBUG")
 
 # SECURITY CRITICAL: ALLOWED_HOSTS must be populated with the domain name of the production environment.
+
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+
 
 AUTH_USER_MODEL = "user.CustomUser"
 
@@ -30,9 +32,17 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "knox",
     "user",
     "partner_location"
 ]
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "knox.auth.TokenAuthentication",
+        "rest_framework.authentication.BasicAuthentication",
+    ),
+}
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
