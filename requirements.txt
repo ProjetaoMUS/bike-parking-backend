@@ -6,4 +6,7 @@ isort
 django-cpf-cnpj
 django-phonenumber-field[phonenumbers]
 django-environ
-Pillow==8.3.1
+django-rest-knox
+drf-spectacular
+Pillow
+
