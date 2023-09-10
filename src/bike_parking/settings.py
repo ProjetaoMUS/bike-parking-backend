@@ -18,7 +18,7 @@ DEBUG = env("DEBUG")
 
 # SECURITY CRITICAL: ALLOWED_HOSTS must be populated with the domain name of the production environment.
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
 
 AUTH_USER_MODEL = "user.CustomUser"
@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     "drf_spectacular",
     "knox",
     "user",
-    "partner_location"
+    "partner_location",
 ]
 
 REST_FRAMEWORK = {
@@ -51,7 +51,6 @@ SPECTACULAR_SETTINGS = {
     "DESCRIPTION": "An internal usage API to access the Pedaloo database.",
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
-    # OTHER SETTINGS
 }
 
 REST_KNOX = {
@@ -136,4 +135,4 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-MEDIA_ROOT = BASE_DIR / 'media/'
+MEDIA_ROOT = BASE_DIR / "media/"
