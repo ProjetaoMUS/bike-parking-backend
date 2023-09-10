@@ -106,11 +106,11 @@ class CustomUser(AbstractBaseUser):
 
     objects = CustomUserManager()
 
-    tax_id = CPFField("tax_id", unique=True, null=True, blank=True)
+    tax_id = CPFField("tax_id", unique=True, null=False, blank=False)
     phone_number = PhoneNumberField(
         "phone_number", unique=True, null=False, blank=False
     )
-    email = models.EmailField("email", unique=True, null=True, blank=False)
+    email = models.EmailField("email", unique=True, null=False, blank=False)
     first_name = models.CharField("first_name", max_length=30, blank=False, null=False)
     gender = models.CharField(
         "gender", choices=GENDERS, max_length=16, blank=False, null=False
