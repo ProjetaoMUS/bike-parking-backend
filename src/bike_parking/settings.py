@@ -31,7 +31,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "user",
-    "partner_location"
+    "partner_location",
+    "reservation"
 ]
 
 MIDDLEWARE = [
