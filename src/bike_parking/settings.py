@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "drf_spectacular",
     "knox",
     "user",
 ]
@@ -41,6 +42,19 @@ REST_FRAMEWORK = {
         "knox.auth.TokenAuthentication",
         "rest_framework.authentication.BasicAuthentication",
     ),
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Pedaloo API",
+    "DESCRIPTION": "An internal usage API to access the Pedaloo database.",
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
+    # OTHER SETTINGS
+}
+
+REST_KNOX = {
+    "AUTH_HEADER_PREFIX": "Bearer",
 }
 
 MIDDLEWARE = [

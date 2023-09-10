@@ -7,3 +7,4 @@ django-cpf-cnpj
 django-phonenumber-field[phonenumbers]
 django-environ
 django-rest-knox
+drf-spectacular
