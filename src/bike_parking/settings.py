@@ -35,8 +35,8 @@ INSTALLED_APPS = [
     "drf_spectacular",
     "knox",
     "user",
-    "partner_location",,
-    "reservation"
+    "partner_location",
+    "reservation",
 ]
 
 REST_FRAMEWORK = {

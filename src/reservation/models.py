@@ -1,26 +1,29 @@
-from django.db import models
-
-# Create your models here.
-from django.db import models
 from django.conf import settings
+from django.db import models
 
-from src.partner_location.models import PartnerLocation
-from src.reservation.enums import PaymentMethodChoices
+from partner_location.models import PartnerLocation
+
+from .enums import PaymentMethodChoices
 
 
 class Reservation(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='reservations')
-    location = models.ForeignKey(PartnerLocation, on_delete=models.CASCADE, related_name='reservations')
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="reservations"
+    )
+    location = models.ForeignKey(
+        PartnerLocation, on_delete=models.CASCADE, related_name="reservations"
+    )
 
     total_price = models.DecimalField(max_digits=10, decimal_places=2)
     bike_count = models.PositiveIntegerField()
-    date = models.DateField()
-    time = models.TimeField()
+    start = models.DateTimeField(null=True, blank=True)
+    end = models.DateTimeField(null=True, blank=True)
+    is_active = models.BooleanField(default=True)
 
     payment_method = models.CharField(
         max_length=10,
         choices=PaymentMethodChoices.choices(),
-        default=PaymentMethodChoices.CREDIT.name
+        default=PaymentMethodChoices.CREDIT.name,
     )
 
     def __str__(self):
