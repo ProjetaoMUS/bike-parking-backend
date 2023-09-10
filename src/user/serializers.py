@@ -18,10 +18,8 @@ class CustomUserSerializer(serializers.ModelSerializer):
         user = super().save(**kwargs)
 
         password = self.validated_data.get("password")
-
         if password is not None:
             user.set_password(password)
-
-        user.save()
+            user.save()
 
         return user
