@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     "knox",
     "user",
     "partner_location",
+    "reservation",
 ]
 
 REST_FRAMEWORK = {
