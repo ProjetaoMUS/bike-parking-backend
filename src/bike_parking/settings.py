@@ -18,7 +18,7 @@ DEBUG = env("DEBUG")
 
 # SECURITY CRITICAL: ALLOWED_HOSTS must be populated with the domain name of the production environment.
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["*"]
 
 
 AUTH_USER_MODEL = "user.CustomUser"

@@ -13,7 +13,12 @@ class CustomUserViewSet(ModelViewSet):
     A user can only edit their own data.
     """
 
-    queryset = CustomUser.objects.all()
+    def get_queryset(self):
+        if self.request.user is not None:
+            return CustomUser.objects.filter(id=self.request.user.id)
+
+        return CustomUser.objects.none()
+
     serializer_class = CustomUserSerializer
 
     permission_classes = [IsUserOrReadOnly]
