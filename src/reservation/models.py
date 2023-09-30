@@ -27,4 +27,4 @@ class Reservation(models.Model):
     )
 
     def __str__(self):
-        return f"Reservation by {self.user} at {self.location} on {self.date} for {self.bike_count} bikes"
+        return f"Reservation by {self.user} at {self.location} on {self.start} to {self.end} for {self.bike_count} bikes"
