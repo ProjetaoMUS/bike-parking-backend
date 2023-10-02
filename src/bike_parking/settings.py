@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     "drf_spectacular",
     "knox",
     "user",
+    "subscription",
     "partner_location",
     "reservation",
 ]
