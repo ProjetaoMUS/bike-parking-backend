@@ -1,0 +1,18 @@
+<!-- jinja2_templates/reservation_detail.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalhes da Reserva</title>
+</head>
+<body>
+    <h1>Detalhes da Reserva</h1>
+    <p>Usuário: {{ reservation.user }}</p>
+    <p>Localização: {{ reservation.location }}</p>
+    <p>Preço Total: {{ reservation.total_price }}</p>
+    <p>Quantidade de Bicicletas: {{ reservation.bike_count }}</p>
+    <p>Início: {{ reservation.start }}</p>
+    <p>Fim: {{ reservation.end }}</p>
+    <p>Está Ativa? {{ reservation.is_active }}</p>
+    <p>Método de Pagamento: {{ reservation.payment_method }}</p>
+</body>
+</html>
