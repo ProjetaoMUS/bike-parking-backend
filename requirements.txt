@@ -9,4 +9,5 @@ django-environ
 django-rest-knox
 drf-spectacular
 Pillow
-
+psycopg2-binary==2.9.6
+google-cloud-secret-manager==2.16.1
