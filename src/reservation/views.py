@@ -1,3 +1,4 @@
+from django.shortcuts import get_object_or_404, render
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
 
@@ -13,3 +14,9 @@ class ReservationViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         return Reservation.objects.filter(user=self.request.user)
+
+
+def reservation_detail(request, reservation_id):
+    reservation = get_object_or_404(Reservation, id=reservation_id)
+    context = {"reservation": reservation}
+    return render(request, 'reservation_detail.reservation_detail.html', context)

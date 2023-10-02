@@ -9,4 +9,4 @@ django-environ
 django-rest-knox
 drf-spectacular
 Pillow
-
+jinja2
